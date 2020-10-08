@@ -31,17 +31,6 @@ class Navbar extends Component {
         </ul>
         <Button>Sign up</Button>
       </nav>
-      // <div className="header">
-      //   <ul className="menu-ul">
-      //       <li><Link to="/">Home</Link></li>
-      //       <li><Link to="/login">Login</Link></li>
-      //       <li><Link to="/register">Register</Link></li>
-      //   </ul>
-      //   <div  className="title">
-      //     <img alt="Logo" src={logo} />
-      //     <h1>Cooking Recipes</h1>
-      //   </div>
-      // </div>
     );
   }
 }
