@@ -1,19 +1,17 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Header from './components/Header/Header';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
-import Login from './components/Login/Login';
-import Register from './components/Register/Register';
+import About from './components/About/About';
 
 function App() {
   return (
     <Router>
       <div>
-        <Header />
+        <Navbar />
         <Route exact path="/" component={Home} />
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
+        <Route path="/about" component={About} />
       </div>
     </Router>
   );
