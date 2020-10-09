@@ -66,7 +66,7 @@
         height: 500px;
         position: absolute;
         top: 80px;
-        left: -100%;
+        left: 100%;
         opacity: 1;
         transition: all 0.5s ease;
     }
@@ -116,14 +116,14 @@
     .nav-link-mobile {
         display: block;
         text-align: center;
-        padding: 1.5;
+        padding: 1.5rem;
         margin: 2rem auto;
         border-radius: 4px;
         width: 80%;
         background: #4ad9e4;
         text-decoration: none;
         color: #fff;
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
 
     .nav-link-mobile:hover {
