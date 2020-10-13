@@ -6,17 +6,19 @@ import Home from './components/Home/Home';
 import About from './components/About/About';
 import Search from './components/Search/Search';
 
-function App() {
-  return (
-    <Router>
-      <div>
-        <Navbar />
-        <Search />
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-      </div>
-    </Router>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <Navbar />
+          <Search />
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
