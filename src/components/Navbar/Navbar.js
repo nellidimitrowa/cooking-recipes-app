@@ -2,7 +2,6 @@ import React from 'react';
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../images/logo.png';
-import { Button } from '../Button.js';
 import { MenuItems } from './MenuItems';
 import "./Navbar.css";
 
@@ -29,7 +28,6 @@ class Navbar extends Component {
             )
           })}
         </ul>
-        <Button>Log in</Button>
       </nav>
     );
   }

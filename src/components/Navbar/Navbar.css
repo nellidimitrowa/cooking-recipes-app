@@ -47,7 +47,21 @@
 }
 
 .nav-link-mobile {
-    display: none;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    margin: 2rem auto;
+    border-radius: 4px;
+    width: 80%;
+    background: #4ad9e4;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.nav-link-mobile:hover {
+    background: #fff;
+    color: #6568F4;
+    transition: 250ms;
 }
 
 .menu-icon {
@@ -131,38 +145,4 @@
         color: #6568F4;
         transition: 250ms;
     }
-
-    Button {
-        display:none;
-    }
 }
-
-/* .menu-ul {
-    list-style-type: none;
-    margin: 0;
-    float: right;
-    margin-right: 20px;
-}
-
-.menu-ul li {
-    display: inline-block;
-    margin-left: 10px;
-}
-
-.title {
-    display: flex;
-    margin-left: 10px;
-    font-style: italic;
-}
-
-.title img {
-    width: 75px;
-    height: 75px;
-}
-
-.header {
-    background-color: #ebf9f2;
-    width: 100%;
-    padding: 10px;
-    border-bottom: double;
-} */
