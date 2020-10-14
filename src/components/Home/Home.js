@@ -1,12 +1,57 @@
-import React from 'react';
+import React, {useState} from 'react';
+import axios from 'axios';
+import Recipe from './Recipe';
+import Alert from './Alert';
 import './Home.css';
 
 function Home() {
+  const [query, setQuery] = useState("");
+  const [recipes, setRecipes] = useState([]);
+  const [alert, setAlert] = useState("");
+  const recipesUrl = `http://localhost:3000/recipes?q=${query}`;
+
+  const getData = async () => {
+    const result = await axios.get(recipesUrl);
+    console.log(result);
+    if (result.data.length !== 0) {
+      setRecipes(result.data);
+      console.log(result.data);
+      setAlert("");
+      setQuery("");
+    } else {
+      setAlert("There is no food with such name");
+    }
+  }
+
+  const onChange = (e) => {
+    setQuery(e.target.value);
+  }
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    getData();
+  }
+
   return (
-    <div>
-      <h1>Home</h1>
+    <div className="Home">
+      <div className="search-and-add">
+        <form className="search-form" onSubmit={onSubmit}>
+          {alert !== "" && <Alert alert={alert} />}
+          <input type="text" placeholder="Search food" autoComplete="off" onChange={onChange} 
+            value={query} />
+          <input type="submit" value="search" />
+          <button className="add-recipe">Add new recipe</button>
+        </form>
+      </div>
+      <div className="recipes">
+        {
+          recipes.length ?
+          recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe} />) : 
+          null
+        }
+      </div>
     </div>
-  );
+  )
 }
 
 export default Home;

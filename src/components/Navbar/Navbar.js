@@ -1,7 +1,5 @@
 import React from 'react';
 import { Component } from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../../images/logo.png';
 import { MenuItems } from './MenuItems';
 import "./Navbar.css";
 
@@ -15,7 +13,7 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="NavbarItems">
-        <h1 className="Navbar-logo"><i class="fas fa-pepper-hot"></i>Cooking Recipes</h1>
+        <h1 className="Navbar-logo"><i className="fas fa-pepper-hot"></i>Cooking Recipes</h1>
         <div className="menu-icon" onClick={this.handleClick}>
           <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
         </div>
