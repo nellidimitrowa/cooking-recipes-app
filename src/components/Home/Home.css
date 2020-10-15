@@ -94,9 +94,6 @@
     border-radius: 0.5rem;
 }
 
-/* .search-and-add {
-} */
-
 .recipes {
   width: 90%;
   display: flex;
@@ -145,6 +142,7 @@
 }
 
 .recipe button {
+  margin-top: 30px;
   font-size: 2rem;
   text-transform: uppercase;
   color: #fff;
@@ -153,6 +151,15 @@
   border-radius: 0.5rem;
   height: 3rem;
   width: 100%;
+}
+
+.recipe button:hover {
+  height: 3rem;
+  width: 100%;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: rgba(73,63,251,1);
+  border-radius: 0.5rem;
 }
 
 .ingredient-list {

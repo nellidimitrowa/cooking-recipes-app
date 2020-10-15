@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Recipe from './Recipe';
+import RecipeList from './RecipeList';
 import Alert from './Alert';
 import './Home.css';
 
@@ -13,16 +13,19 @@ function Home() {
 
   const getData = async () => {
     const result = await axios.get(recipesUrl);
-    console.log(result);
     if (result.data.length !== 0) {
       setRecipes(result.data);
-      console.log(result.data);
       setAlert("");
       setQuery("");
+      return result.data;
     } else {
       setAlert("There is no food with such name");
     }
   }
+
+  useEffect(() => {
+    getData().then(recipes => setRecipes(recipes));
+  }, []);
 
   const onChange = (e) => {
     setQuery(e.target.value);
@@ -47,7 +50,7 @@ function Home() {
       <div className="recipes">
         {
           recipes.length ?
-            recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe} />) :
+            recipes.map(recipe => <RecipeList key={recipe.id} recipe={recipe} />) :
             null
         }
       </div>
