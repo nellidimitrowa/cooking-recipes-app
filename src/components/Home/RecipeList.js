@@ -8,7 +8,7 @@ function RecipeList({ recipe }) {
         <div className="recipe">
             <h2>{name}</h2>
             <img src={imagePath} alt={description} />
-            <Route render={({ history }) => (<button type='button' onClick={() => { history.push(`/recipeDetails/${recipe.id}`) }}>Go to the recipe</button>)} />
+            <Route render={({ history }) => (<button type='button' onClick={() => { history.push(`/recipeDetails/${recipe.id}`) }}>Recipe details</button>)} />
         </div>
     )
 }
