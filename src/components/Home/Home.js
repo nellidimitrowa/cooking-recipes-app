@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import Recipe from './Recipe';
 import Alert from './Alert';
@@ -8,6 +8,7 @@ function Home() {
   const [query, setQuery] = useState("");
   const [recipes, setRecipes] = useState([]);
   const [alert, setAlert] = useState("");
+
   const recipesUrl = `http://localhost:3000/recipes?q=${query}`;
 
   const getData = async () => {
@@ -37,17 +38,17 @@ function Home() {
       <div className="search-and-add">
         <form className="search-form" onSubmit={onSubmit}>
           {alert !== "" && <Alert alert={alert} />}
-          <input type="text" placeholder="Search food" autoComplete="off" onChange={onChange} 
+          <input type="text" placeholder="Search food" autoComplete="off" onChange={onChange}
             value={query} />
           <input type="submit" value="search" />
-          <button className="add-recipe">Add new recipe</button>
+          <button type="button" className="add-recipe">Add new recipe</button>
         </form>
       </div>
       <div className="recipes">
         {
           recipes.length ?
-          recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe} />) : 
-          null
+            recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe} />) :
+            null
         }
       </div>
     </div>
