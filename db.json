@@ -130,5 +130,28 @@
       ],
       "name": "Fried EggPlant"
     }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "recipeId": 1,
+      "username": "ann",
+      "date": "16.10.2020 13:40",
+      "text": "WOW! What a masterpiece"
+    },
+    {
+      "id": 2,
+      "recipeId": 1,
+      "username": "ben",
+      "date": "16.10.2020 16:41",
+      "text": "Eww.. What a mess"
+    },
+    {
+      "id": 3,
+      "recipeId": 2,
+      "username": "ben",
+      "date": "16.10.2020 16:41",
+      "text": "Eww.. What a mess"
+    }
   ]
 }
