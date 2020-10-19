@@ -7,7 +7,7 @@ import Comments from '../Comments/Comments';
 const RecipeDetails = () => {
     const [recipe, setRecipe] = useState([]);
     const { id } = useParams();
-    const history = useHistory()
+    const history = useHistory();
     const recipeUrl = `http://localhost:3000/recipes/${id}`;
 
     const getData = async () => {
@@ -29,7 +29,7 @@ const RecipeDetails = () => {
             <div className="active-recipe">
                 <h1 className="active-recipe_title">{recipe.name}</h1>
                 <h5 className="active-recipe_description">{recipe.description}</h5>
-                <img className="active-recipe_img" src={recipe.imagePath}></img>
+                <img className="active-recipe_img" src={recipe.imagePath} alt={recipe.name}></img>
                 <button className="active-recipe_button" onClick={handleDelete}>Delete</button>
                 <button className="active-recipe_button">Edit</button>
                 <h2 className="active-recipe_ingredients">Ingredients</h2>
