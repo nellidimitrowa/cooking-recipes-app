@@ -24,6 +24,10 @@ const RecipeDetails = () => {
         history.goBack();
     }
 
+    function handleEdit() {
+        history.push(`/editRecipe/${id}`);
+    }
+
     return (
         <div className="container">
             <div className="active-recipe">
@@ -31,7 +35,7 @@ const RecipeDetails = () => {
                 <h5 className="active-recipe_description">{recipe.description}</h5>
                 <img className="active-recipe_img" src={recipe.imagePath} alt={recipe.name}></img>
                 <button className="active-recipe_button" onClick={handleDelete}>Delete</button>
-                <button className="active-recipe_button">Edit</button>
+                <button className="active-recipe_button" onClick={handleEdit}>Edit</button>
                 <h2 className="active-recipe_ingredients">Ingredients</h2>
                 <ul>
                     {

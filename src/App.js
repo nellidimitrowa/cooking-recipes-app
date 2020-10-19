@@ -7,6 +7,7 @@ import AddNewRecipe from './components/AddNewRecipe/AddNewRecipe';
 import Users from './components/Users/Users';
 import RecipeDetails from  './components/RecipeDetails/RecipeDetails';
 import Authentication from './components/Authentication/Authentication';
+import EditRecipe from './components/RecipeDetails/EditRecipe';
 
 class App extends React.Component {
   render() {
@@ -19,6 +20,7 @@ class App extends React.Component {
           <Route exact path="/users" component={Users} />
           <Route path="/login" component={Authentication} />
           <Route path="/recipeDetails/:id" component={RecipeDetails} />
+          <Route path="/editRecipe/:id" component={EditRecipe} />
         </div>
       </Router>
     );
