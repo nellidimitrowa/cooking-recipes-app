@@ -3,7 +3,6 @@
 }
 
 .add-comment-form {
-    width: 60rem;
     height: 5rem;
     display: flex;
     margin-top: 10px;
@@ -46,7 +45,6 @@
 }
 
 .comments-form {
-  width: 60rem;
   height: 5rem;
   display: flex;
   margin-top: 10px;
