@@ -1,107 +1,89 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
 import axios from "axios";
 import "./AddNewRecipe.css";
 
-class AddNewRecipe extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      recipeName: "",
-      description: "",
-      imagePath: "",
-      ingredients: [{
-        name: null,
-        amount: null
-      }]
-    };
+function  AddNewRecipe () {
+  const [recipeName, setRecipeName] = useState("");
+  const [description, setDescription] = useState("");
+  const [imagePath, setImagePath] = useState("");
+  const [ingredients, setIngredients] = useState([{ name: "", amount: "" }]);
+  const history = useHistory();
+
+  const handleAdd = () => {
+    setIngredients([...ingredients, { name: "", amount: "" }]);
   }
 
-  changeHandler = (e) =>{
-    this.setState({ [e.target.name]: e.target.value })
-  }
-
-  handleAdd = () => {
-    const values = [...this.state.ingredients];
-    values.push({ name: null, amount: null });
-    this.setState({ ingredients: values });
-  }
-
-  handleRemove = (i) => {
-    const values = [...this.state.ingredients];
-    console.log(values);
+  const handleRemove = (i) => {
+    const values = [...ingredients];
     values.splice(i, 1);
-    this.setState({ ingredients: values });
+    setIngredients(values);
   }
 
-  handleChange = (i, event) => {
-    const values = [...this.state.ingredients];
-    values[i].value = event.target.value;
-    this.setState({ ingredients: values });
-  }
 
-  handleNameChange = (i, event) => {
-    const values = [...this.state.ingredients];
-    values[i].name = event.target.value;
-    this.setState({ name: values });
+  const handleChange = (index, e) => {
+    const { name, value } = e.target;
+    const values = [...ingredients];
+    values[index][name] = value;
+    setIngredients(values);
   };
 
-  handleAmountChange = (i, event) => {
-    const values = [...this.state.ingredients];
-    values[i].amount = event.target.value;
-    this.setState({ amount: values });
-  };
-
-  onSubmitHandler = (e) => {
+  const onSubmitHandler = (e) => {
     e.preventDefault();
     const data = {
-      name: this.state.recipeName,
-      description: this.state.description,
-      imagePath: this.state.imagePath,
-      ingredients: this.state.ingredients
+      name: recipeName,
+      description: description,
+      imagePath: imagePath,
+      ingredients: ingredients
     }
     axios.post(`http://localhost:3000/recipes`, data)
       .then(result => {
         console.log(result);
     });
-    this.setState({ 
-      name:'',
-      description: '',
-      imagePath: '',
-      ingredients: ''
-     });
+    history.push('/');
   };
 
-  render() {
+  const onRecipeNameChange = (e) => {
+    setRecipeName(e.target.value);
+  }
+
+  const onDescriptionChange = (e) => {
+    setDescription(e.target.value);
+  }
+
+  const onImagePathChange = (e) => {
+    setImagePath(e.target.value);
+  }
+
     return (
       <div className="add-recipe-wrapper">
         <label htmlFor="name">NAME</label>
-        <input type="text" id="recipeName" value={this.state.recipeName} name="recipeName" onChange={this.changeHandler} />
+        <input type="text" id="recipeName" value={recipeName} name="recipeName" onChange={onRecipeNameChange} />
         <label htmlFor="description">DESCRIPTION</label>
-        <input type="text" id="description" value={this.state.description} name="description" onChange={this.changeHandler} />
+        <input type="text" id="description" value={description} name="description" onChange={onDescriptionChange} />
         <label htmlFor="imagePath">IMAGE PATH</label>
-        <input type="text" id="imagePath" value={this.state.imagePath} name="imagePath" onChange={this.changeHandler} />
+        <input type="text" id="imagePath" value={imagePath} name="imagePath" onChange={onImagePathChange} />
         <label htmlFor="ingredients">INGREDIENTS</label>
-        <button className="add-ingredients_button" onClick={() => this.handleAdd()}>Add ingredient</button>
+        <button className="add-ingredients_button" onClick={() => handleAdd()}>Add ingredient</button>
         <br />
         <label htmlFor="name">NAME</label>
         <label className="amountLabel" htmlFor="amount">AMOUNT</label>
-        {this.state.ingredients.map((ingredient, idx) => {
+        {ingredients.map((ingredient, idx) => {
           return (
             <div key={`${ingredient}-${idx}`}>
               <ul>
                 <li className="ingredients">
-                  <input type="text" id="name" value={this.state.ingredients.name} name="name" onChange={e => this.handleNameChange(idx, e)} />
-                  <input className="amountInput" type="text" id="amount" value={this.state.ingredients.amount} name="amount"  onChange={e => this.handleAmountChange(idx, e)} />
-                  <button className="remove_ingredient_button" onClick={() => this.handleRemove(idx)}>delete</button>
+                  <input type="text" id="name" value={ingredients.name} name="name" onChange={e => handleChange(idx, e)} />
+                  <input className="amountInput" type="text" id="amount" value={ingredients.amount} name="amount"  onChange={e => handleChange(idx, e)} />
+                  <button className="remove_ingredient_button" onClick={() => handleRemove(idx)}>delete</button>
                 </li>
               </ul>
             </div>
           );
         })}
-        <input type="submit" value="submit" className="submitButton" onClick={this.onSubmitHandler} />
+        <input type="submit" value="submit" className="submitButton" onClick={onSubmitHandler} />
       </div>
     );
-  }
 }
 
 export default AddNewRecipe;
