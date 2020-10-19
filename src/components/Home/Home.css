@@ -76,24 +76,6 @@
     border-radius: 0.5rem;
 }
 
-.add-recipe {
-    height: 3rem;
-    width: 25%;
-    text-transform: uppercase;
-    background-color: #4ad9e4;
-    color: #fff;
-    border-radius: 0.5rem;
-    float: right;
-}
-
-.add-recipe:hover {
-    width: 25%;
-    text-transform: uppercase;
-    color: #fff;
-    background-color: rgba(73,63,251,1);
-    border-radius: 0.5rem;
-}
-
 .recipes {
   width: 90%;
   display: flex;

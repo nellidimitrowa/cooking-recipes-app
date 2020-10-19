@@ -41,10 +41,8 @@ function Home() {
       <div className="search-and-add">
         <form className="search-form" onSubmit={onSubmit}>
           {alert !== "" && <Alert alert={alert} />}
-          <input type="text" placeholder="Search food" autoComplete="off" onChange={onChange}
-            value={query} />
+          <input type="text" placeholder="Search food" autoComplete="off" onChange={onChange} value={query} />
           <input type="submit" value="search" />
-          <button type="button" className="add-recipe">Add new recipe</button>
         </form>
       </div>
       <div className="recipes">
