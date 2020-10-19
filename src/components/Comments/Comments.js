@@ -18,7 +18,7 @@ function Comments() {
     getData().then(comments => setComments(comments));
   }, []);
 
-  const onSubmit= () => {
+  const onSubmit = () => {
     const data = {
       recipeId: id,
       username: "ann",
@@ -32,7 +32,7 @@ function Comments() {
     setNewComment("");
   }
 
-  function handleTextChanged(event) {
+  const handleTextChanged = (event) => {
     setNewComment(event.target.value);
   }
 
