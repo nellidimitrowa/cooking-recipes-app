@@ -1,0 +1,98 @@
+html,
+body,
+body * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: inherit;
+}
+*/ body {
+  background-size: cover;
+  background-position: center center;
+}
+
+.container {
+  width: 100%;
+  padding-bottom: 100px;
+}
+
+.add-recipe-wrapper {
+  height: 600px;
+  width: 850px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  padding: 0 2em;
+}
+
+.ingredients {
+  box-sizing: border-box;
+}
+
+.ingredients input {
+  width: 333px;
+}
+
+.amountLabel {
+  margin-left: 290px;
+}
+
+.amountInput {
+  margin-left: 100px;
+}
+
+.add-ingredients_button {
+  width: 200px;
+  text-transform: uppercase;
+  background-color: #4ad9e4;
+  color: #fff;
+  border-radius: 0.5rem;
+  float: right;
+}
+
+.add-ingredients_button:hover {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: rgba(73, 63, 251, 1);
+  border-radius: 0.5rem;
+}
+
+.remove_ingredient_button {
+  width: 90px;
+  margin-top: 17px;
+  text-transform: uppercase;
+  background-color: #4ad9e4;
+  color: #fff;
+  border-radius: 0.5rem;
+  float: right;
+}
+
+.remove_ingredient_button:hover {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: rgba(73, 63, 251, 1);
+  border-radius: 0.5rem;
+}
+
+.submitButton {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1em;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  padding: 8px 0px;
+  width: 100%;
+  height: 35px;
+  border: none;
+  border-radius: 20px;
+  margin-top: 23px;
+  background-color: #4ad9e4;
+}
+
+.submitButton:hover {
+  border-radius: 20px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: rgba(73, 63, 251, 1);
+}
