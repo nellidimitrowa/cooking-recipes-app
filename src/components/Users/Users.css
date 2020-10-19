@@ -1,0 +1,50 @@
+body {
+  background-size:  cover;
+  background-position:center center;
+}
+
+.users {
+  border-radius: 20px;
+  width: 80%;
+  text-align-last: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 30px;
+  border-style: hidden; /* hide standard table (collapsed) border */
+}
+
+.users tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+.users tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+.users-form {
+  height: 5rem;
+  display: flex;
+  margin-top: 10px;
+  background-color: #f2f2f2;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  font-size: 1.6rem;
+  border: none;
+  border-bottom: solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.users td,
+.users th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.users th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4ad9e4;
+  color: white;
+}
