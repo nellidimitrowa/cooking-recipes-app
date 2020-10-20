@@ -25,7 +25,7 @@ function Home() {
 
   useEffect(() => {
     getData().then(recipes => setRecipes(recipes));
-  });
+  }, []);
 
   const onChange = (e) => {
     setQuery(e.target.value);
