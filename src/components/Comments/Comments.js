@@ -16,13 +16,15 @@ function Comments() {
 
   useEffect(() => {
     getData().then(comments => setComments(comments));
-  }, []);
+  });
 
-  const onSubmit = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const today = new Date();
     const data = {
       recipeId: id,
-      username: "ann",
-      date: "18.10.2020 18:15",
+      username: "nedyalka",
+      date: today.getFullYear() + '.' + (today.getMonth() + 1) + '.' + today.getDate() + ' ' + today.getHours() + ':' + today.getMinutes(),
       text: newComment
     };
     axios.post(`http://localhost:3000/comments`, data)

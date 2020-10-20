@@ -17,11 +17,11 @@ const RecipeDetails = () => {
 
     useEffect(() => {
         getData().then(recipe => setRecipe(recipe));
-    }, []);
+    });
 
     function handleDelete() {
         axios.delete(recipeUrl);
-        history.goBack();
+        history.push(`/`);
     }
 
     function handleEdit() {
