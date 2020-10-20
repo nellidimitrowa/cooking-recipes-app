@@ -31,9 +31,9 @@
   ],
   "recipes": [
     {
-      "id": 1,
+      "name": "Chinese Chicken",
       "description": "Chinese Chicken with sweet and sour sauce",
-      "imagePath": "https://s-media-cache-ak0.pinimg.com/originals/63/6d/8d/636d8d6cfbf1862e5ad5f89571c55430.jpg",
+      "imagePath": "https://www.simplyrecipes.com/wp-content/uploads/2020/01/Chinese-Orange-Chicken-Lead-3.jpg",
       "ingredients": [
         {
           "amount": 4,
@@ -44,11 +44,11 @@
           "name": "Chinese spices"
         },
         {
-          "amount": 2,
-          "name": "Onions"
+          "name": "Onions",
+          "amount": "2"
         }
       ],
-      "name": "Chinese Chicken"
+      "id": 1
     },
     {
       "id": 2,

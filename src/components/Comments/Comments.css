@@ -59,5 +59,6 @@
 }
 
 .comments-form label {
-  color: #4ad9e4
+  color: #4ad9e4;
+  margin-left: 5px;
 }

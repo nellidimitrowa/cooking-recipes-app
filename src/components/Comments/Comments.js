@@ -24,7 +24,7 @@ function Comments() {
     const data = {
       recipeId: id,
       username: "nedyalka",
-      date: today.getFullYear() + '.' + (today.getMonth() + 1) + '.' + today.getDate() + ' ' + today.getHours() + ':' + today.getMinutes(),
+      date: today.getDate() + '.' + (today.getMonth() + 1) + '.' + today.getFullYear() + ' ' + today.getHours() + ':' + (today.getMinutes()<10?'0':'') + today.getMinutes(),
       text: newComment
     };
     axios.post(`http://localhost:3000/comments`, data)
@@ -46,7 +46,12 @@ function Comments() {
         {
           comments ?
             comments.map((comment, index) => (<li className="comments-form" key={index}>
-              <label>{comment.username}</label> <br></br> {comment.text}</li>)) :
+              <div>
+                <label>{comment.username}</label> - {comment.date}
+                <br></br>
+                {comment.text}
+              </div>
+              </li>)) :
             "Loading..."
         }
       </ul>
